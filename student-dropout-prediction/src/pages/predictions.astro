@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PredictionForm from '../components/PredictionForm';
+---
+
+<Layout title="Predicciones">
+  <div class="px-4 py-6">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl font-bold text-gray-900 mb-6">
+        Predicción de Deserción
+      </h1>
+      
+      <div class="bg-white shadow rounded-lg p-6">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">
+          Ingrese los Datos del Estudiante
+        </h2>
+        <PredictionForm client:load />
+      </div>
+    </div>
+  </div>
+</Layout>

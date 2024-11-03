@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DataVisualization from '../components/DataVisualization';
+---
+
+<Layout title="Inicio">
+  <div class="px-4 py-6">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-3xl font-bold text-gray-900 mb-6">
+        Dashboard de Predicción de Deserción
+      </h1>
+      
+      <div class="bg-white shadow rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">
+          Resumen del Sistema
+        </h2>
+        <p class="text-gray-600">
+          Este sistema utiliza técnicas de Machine Learning para predecir la probabilidad
+          de deserción estudiantil basándose en factores clave como calificaciones,
+          asistencia y comportamiento.
+        </p>
+      </div>
+
+      <div class="bg-white shadow rounded-lg p-6">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">
+          Estadísticas Generales
+        </h2>
+        <DataVisualization client:load />
+      </div>
+    </div>
+  </div>
+</Layout>
