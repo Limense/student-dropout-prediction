@@ -24,7 +24,7 @@ def cargar_y_preprocesar_datos():
         tuple: Datos de entrenamiento y prueba
     """
     # Cargar datos
-    data = pd.read_csv(r'C:\Users\Jeffe\Desktop\student-dropout-prediction\ml\data\student_data.csv')
+    data = pd.read_csv(r'C:\Users\Andriy\Documents\GitHub\student-dropout-prediction\ml\data\student_data.csv')
 
     # Eliminar filas con valores NaN en cualquier columna
     data = data.dropna()
@@ -142,3 +142,6 @@ if __name__ == "__main__":
     print("Iniciando entrenamiento del modelo...")
     history, metricas = entrenar_y_guardar_modelo()
     print("\nEntrenamiento completado exitosamente!")
+
+
+
