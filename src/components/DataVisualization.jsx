@@ -1,9 +1,10 @@
+// Importación de las librerias necesarias
 import React, { useEffect, useState } from 'react';
 import {
-  BarChart,
+  BarChart, // Gráfico de barras
   Bar,
-  XAxis,
-  YAxis,
+  XAxis,         // Eje X
+  YAxis,           // Eje Y
   CartesianGrid,
   Tooltip,
   Legend,
@@ -11,11 +12,13 @@ import {
 } from 'recharts';
 
 export default function DataVisualization() {
+  // Estados para manejar los datos y el estado de carga
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Realizacar peticion http al end point /stats
     fetch('http://localhost:5000/stats')
       .then(response => {
         if (!response.ok) {

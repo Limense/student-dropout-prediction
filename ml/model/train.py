@@ -1,3 +1,5 @@
+#Deep learning
+
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -58,22 +60,22 @@ def crear_modelo():
     """
     model = Sequential([
         # Capa de entrada
-        Dense(64, input_shape=(3,)),
+        Dense(64, input_shape=(3,)), # Capa entrada: 3 features -> 64 neuronas
         BatchNormalization(),
-        Dense(64, activation='relu'),
-        Dropout(0.3),
+        Dense(64, activation='relu'), # Primera capa oculta
+        Dropout(0.3),                       # 30% dropout para prevenir overfitting
 
         # Capas ocultas
-        Dense(32, activation='relu'),
+        Dense(32, activation='relu'), # Seguna capa oculta
         BatchNormalization(),
-        Dropout(0.2),
+        Dropout(0.2),                      # 20% dropout
 
-        Dense(16, activation='relu'),
+        Dense(16, activation='relu'), # Tercera capa oculta
         BatchNormalization(),
-        Dropout(0.1),
+        Dropout(0.1),                      # 10% dropout
 
         # Capa de salida
-        Dense(1, activation='sigmoid')
+        Dense(1, activation='sigmoid') # Capa salida: 1 neurona -> clasificación binaria
     ])
 
     model.compile(

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
+// Componente de formulario para predicción de deserción
 const PredictionForm = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
+// Manejador del envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -12,12 +14,14 @@ const PredictionForm = () => {
 
     const formData = new FormData(e.target);
     const data = {
+      // Convertir valores del formulario a números
       calificaciones: Number(formData.get('calificaciones')),
       asistencia: Number(formData.get('asistencia')),
       incidentes_comportamiento: Number(formData.get('incidentes_comportamiento'))
     };
 
     try {
+      // Realizar petición POST al endpoint de predicción
       const response = await fetch('http://localhost:5000/predict', {
         method: 'POST',
         headers: {
@@ -39,6 +43,7 @@ const PredictionForm = () => {
     }
   };
 
+  // Colores para los niveles de riesgo
   const getRiskColor = (riesgo) => {
     switch (riesgo) {
       case 'Alto':
